@@ -3,9 +3,7 @@ package pl.yellowduck.netflix90;
 import pl.yellowduck.netflix90.resources.*;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import static pl.yellowduck.netflix90.resources.Gender.FEMALE;
@@ -24,7 +22,7 @@ public class Main2 {
     actors.add(julitette);
     actors.add(greg);
 
-    VideoCassete theRoom = new VideoCassete(
+    VideoCassette theRoom = new VideoCassette(
         "VID001",
         BigDecimal.valueOf(20),
         "The Room",

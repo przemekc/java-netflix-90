@@ -3,7 +3,7 @@ package pl.yellowduck.netflix90.resources;
 import java.math.BigDecimal;
 import java.util.Set;
 
-public class VideoCassete {
+public class VideoCassette {
 
   private String id;
   private BigDecimal price;
@@ -12,7 +12,7 @@ public class VideoCassete {
   private Category category;
   private Set<Actor> actors;
 
-  public VideoCassete(String id, BigDecimal price, String title, Director director, Category category, Set<Actor> actors) {
+  public VideoCassette(String id, BigDecimal price, String title, Director director, Category category, Set<Actor> actors) {
     this.id = id;
     this.price = price;
     this.title = title;
@@ -23,7 +23,7 @@ public class VideoCassete {
 
   public void printOut() {
     // print casette data with below pattern
-//    | ID | Title | Category | Price | Director | Actors |
+    //    | ID | Title | Category | Price | Director | Actors |
     StringBuilder builder = new StringBuilder();
     builder.append("|")
         .append(this.id)
