@@ -13,4 +13,17 @@ public abstract class Person {
   }
 
   public abstract void introduce();
+
+  public String getFirstname() {
+    return firstname;
+  }
+
+  public String getLastname() {
+    return lastname;
+  }
+
+  @Override
+  public String toString() {
+    return firstname + " " + lastname;
+  }
 }

@@ -24,4 +24,9 @@ public class Actor extends Person {
         break;
     }
   }
+
+  @Override
+  public String toString() {
+    return "Actor: " + firstname + " " + lastname;
+  }
 }
