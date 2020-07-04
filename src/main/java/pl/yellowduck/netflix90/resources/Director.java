@@ -2,8 +2,8 @@ package pl.yellowduck.netflix90.resources;
 
 public class Director extends Person {
 
-  public Director(String firstname, String lastname) {
-    super(firstname, lastname);
+  public Director(String firstname, String lastname, Gender gender) {
+    super(firstname, lastname, gender);
   }
 
   @Override
