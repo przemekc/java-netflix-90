@@ -26,7 +26,7 @@ public class Hero {
     }
 
     public Set<String> getSuperpowers() {
-        return superpowers;
+        return Collections.unmodifiableSet(superpowers);
     }
 
     public void addSuperPower(String... power) {
