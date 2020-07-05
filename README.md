@@ -9,7 +9,7 @@
 - Gender - typ wyliczeniowy płeć
 - Discontable - interfejs znizek - poczatek
 
-## client
+## clients - package clients
 
 Zaimplementuj obszar zarzadzania klientami
 
