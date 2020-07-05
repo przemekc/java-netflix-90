@@ -1,5 +1,7 @@
 package pl.yellowduck.netflix90.resources;
 
+import lombok.Getter;
+
 public class Actor extends Person {
 
   public Actor(String firstname, String lastname, Gender gender) {
@@ -17,16 +19,16 @@ public class Actor extends Person {
 
     switch (this.gender) {
       case MALE:
-        System.out.println("My name is " + firstname + " " + lastname + ". I am actor.");
+        System.out.println("My name is " + getFirstname() + " " + getLastname() + ". I am actor.");
         break;
       case FEMALE:
-        System.out.println("My name is " + firstname + " " + lastname + ". I am actress.");
+        System.out.println("My name is " + getFirstname() + " " + getLastname() + ". I am actress.");
         break;
     }
   }
 
   @Override
   public String toString() {
-    return "Actor: " + firstname + " " + lastname;
+    return "Actor: " + getFirstname() + " " + getLastname();
   }
 }

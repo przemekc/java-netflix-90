@@ -26,7 +26,7 @@ public class Main {
 
     for (int i = 0; i < persons.size() - 1; i++) {
       Person person = persons.get(i);
-      person.introduce();
+      System.out.println(person.toString());
     }
 
     // or

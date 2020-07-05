@@ -1,5 +1,7 @@
 package pl.yellowduck.netflix90.exceptions;
 
+import pl.yellowduck.netflix90.annotations.Test;
+
 public class MojBladException extends Exception {
 
   public MojBladException(String message) {

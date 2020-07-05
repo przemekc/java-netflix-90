@@ -1,9 +1,13 @@
 package pl.yellowduck.netflix90.resources;
 
+import lombok.Getter;
+import lombok.ToString;
+
+@Getter
 public abstract class Person {
 
-  protected String firstname;
-  protected String lastname;
+  private String firstname;
+  private String lastname;
   protected final Gender gender;
 
   public Person(String firstname, String lastname, Gender gender) {
@@ -13,14 +17,6 @@ public abstract class Person {
   }
 
   public abstract void introduce();
-
-  public String getFirstname() {
-    return firstname;
-  }
-
-  public String getLastname() {
-    return lastname;
-  }
 
   @Override
   public String toString() {
