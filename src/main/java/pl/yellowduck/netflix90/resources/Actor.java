@@ -1,10 +1,16 @@
 package pl.yellowduck.netflix90.resources;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
+@Getter
 public class Actor extends Person {
 
-  public Actor(String firstname, String lastname, Gender gender) {
+  @JsonCreator
+  public Actor(@JsonProperty("firstname") String firstname,
+               @JsonProperty("lastname") String lastname,
+               @JsonProperty("gender") Gender gender) {
     super(firstname, lastname, gender);
   }
 

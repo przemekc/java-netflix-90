@@ -12,14 +12,14 @@ public class VideoCassetteCatalog implements IVideoCassetteCatalog {
     private final List<VideoCassette> cassettes = new ArrayList<>();
 
     @Override
-    public void addVideoCassette(VideoCassette videoCassette) {
+    public void add(VideoCassette videoCassette) {
         cassettes.add(videoCassette);
     }
 
     @Override
-    public void addVideoCassette(VideoCassette... videoCassette) {
+    public void addAll(VideoCassette... videoCassette) {
         for (VideoCassette cassette : videoCassette) {
-            addVideoCassette(cassette); // reuzycie metody addVideoCassette
+            add(cassette); // reuzycie metody addVideoCassette
         }
     }
 

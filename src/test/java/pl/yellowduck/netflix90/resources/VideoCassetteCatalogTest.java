@@ -37,7 +37,7 @@ public class VideoCassetteCatalogTest {
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         // when
-        catalog.addVideoCassette(videoCassette);
+//        catalog.addVideoCassette(videoCassette);
 
         // then
         assertThat(catalog.getVideoCassettes())
@@ -69,7 +69,7 @@ public class VideoCassetteCatalogTest {
 //        for (VideoCassette cassette : List.of(videoCassette1, videoCassette2)) {
 //            catalog.addVideoCassette(cassette);
 //        }
-        catalog.addVideoCassette(videoCassette1, videoCassette2);
+//        catalog.addVideoCassette(videoCassette1, videoCassette2);
 
         // then
         assertThat(catalog.getVideoCassettes())
