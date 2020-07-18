@@ -14,13 +14,15 @@
 Zaimplementuj obszar zarzadzania klientami
 
 - klasa Client 
-  - atrybuty: 
+  - atrybuty:
+    - identyfikator - String
     - imie
     - nazwisko
-    - plec 
     - adres - rozwaz uzycie klasy adres reprezentujacej polski adres. 
     Jakie widzisz zalety uzycia takiej klasy?
     - status klienta - klient typu VIP, NORMAL
     - zastanow sie nad enkapsulacja adresow. Nie pozwol zeby klient nie wiedzial o modyfikacji adresow.
 
 Rozważ wykorzystanie istniejacych juz w projekcie klas. Czy widzisz potrzebe innego podzialu na pakiety?
+
+- klasa ClientCatalog - zapisuje i odczytuje klientow z pliku clients.txt
