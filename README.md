@@ -26,3 +26,18 @@ Zaimplementuj obszar zarzadzania klientami
 Rozważ wykorzystanie istniejacych juz w projekcie klas. Czy widzisz potrzebe innego podzialu na pakiety?
 
 - klasa ClientCatalog - zapisuje i odczytuje klientow z pliku clients.txt
+
+## video cassetes rentals (wypozyczenia)
+
+Zaimplementuj rejestr wypozyczen
+
+- Klasa Rent (wypozyczenie)
+  - atrybuty: 
+    - identity - identyfikator - kolejny numer wypozyczenia
+    - clientId - identyfikator klienta zgodny z identyfikatorem klasy Client
+    - casseteId - identyfikator kasety
+    - rentDate - data wypozyczenia
+    - rentDays - liczba dni wypozyczenia
+    - rentCost - koszt wypozyczenia (obliczany na podstawie dni i kosztu: 5 PLN za dobe. klient VIP znizka 10% na wypozyczenie jesli wypozycza a wiecej niz 3 dni)
+    - returnDate - data zwrotu
+ - Klasa Rent registry: rejest wypozyczen trzymajacy dane w pamieci i zapisujacy jednoczenie dane do pliku rents.txt.
