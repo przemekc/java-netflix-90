@@ -31,7 +31,7 @@ public class UniqueVideoCassetteCatalogTest {
         // when
 //        catalog.addVideoCassette(videoCassette1, videoCassette2);
         // then
-        Assertions.assertThat(catalog.getVideoCassettes())
+        Assertions.assertThat(catalog.getAll())
                 .hasSize(1);
     }
 }

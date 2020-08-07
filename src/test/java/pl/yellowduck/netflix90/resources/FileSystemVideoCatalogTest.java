@@ -1,14 +1,11 @@
 package pl.yellowduck.netflix90.resources;
 
-import java.math.BigDecimal;
-import java.util.Set;
-
 public class FileSystemVideoCatalogTest {
 
     public static void main(String[] args) {
         FileSystemVideoCatalog catalog = new FileSystemVideoCatalog();
 
-        System.out.println("Katalog:" + catalog.getVideoCassettes());
+        System.out.println("Katalog:" + catalog.getAll());
 
 //        VideoCassette videoCassette1 = new VideoCassette(
 //                "V001",

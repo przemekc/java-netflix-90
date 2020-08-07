@@ -10,21 +10,21 @@ public class UniqueVideoCassetteCatalog implements IVideoCassetteCatalog {
     private final Set<VideoCassette> cassettes = new HashSet<>();
 
     @Override
-    public void add(VideoCassette videoCassette) throws CassetteAddException {
+    public void add(VideoCassette videoCassette) throws CatalogAddException {
         if(!cassettes.add(videoCassette)) {
-            throw new CassetteAddException("Cassette already added");
+            throw new CatalogAddException("Cassette already added");
         }
     }
 
     @Override
-    public void addAll(VideoCassette... videoCassette) throws CassetteAddException {
+    public void addAll(VideoCassette... videoCassette) throws CatalogAddException {
         for (VideoCassette cassette : videoCassette) {
             add(cassette);
         }
     }
 
     @Override
-    public List<VideoCassette> getVideoCassettes() {
+    public List<VideoCassette> getAll() {
         return new ArrayList<>(cassettes);
     }
 }

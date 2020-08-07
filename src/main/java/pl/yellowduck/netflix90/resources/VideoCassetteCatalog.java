@@ -24,7 +24,7 @@ public class VideoCassetteCatalog implements IVideoCassetteCatalog {
     }
 
     @Override
-    public List<VideoCassette> getVideoCassettes() {
+    public List<VideoCassette> getAll() {
         return cassettes;
     }
 }

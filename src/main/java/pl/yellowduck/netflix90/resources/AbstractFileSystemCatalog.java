@@ -8,17 +8,26 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-public class FileSystemVideoCatalog extends UniqueVideoCassetteCatalog {
+public abstract class AbstractFileSystemCatalog<T> {
 
-    private final Path file = Paths.get("cassetts.txt");
+    private final Set<T> elements = new HashSet<>();
+
+    private final Path file;
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
+    private final Class<T> clazz;
+
     // nie uzywc throws w konstruktorach - pewien skrot myslowy zeby nie wprowadzac wzorcow fabryki etc.
-    public FileSystemVideoCatalog() {
+    public AbstractFileSystemCatalog(String path, Class<T> clazz) {
+        this.file = Path.of(path);
+        this.clazz = clazz;
         // tworzy plik jesli nieistnieje
         try {
             if(!Files.exists(file)) { // sprawdza czy istnieje plik
@@ -28,15 +37,14 @@ public class FileSystemVideoCatalog extends UniqueVideoCassetteCatalog {
             throw new CassettteReadException("Cannot create file");
         }
 
-
         try (BufferedReader bufferedReader = Files.newBufferedReader(file)) {
             String line;
             while((line = bufferedReader.readLine()) != null) {
-                VideoCassette cassette = objectMapper.readValue(line, VideoCassette.class);
+                T cassette = objectMapper.readValue(line, clazz);
                 // linia wyzej odpowiada mniej wiecejtemu
                 // VideoCassette cassette = new VideoCassete()
                 // ustawDaneNaPodstawieWartosciZLine(cassete)
-                super.add(cassette);
+                add(cassette);
             }
         } catch (IOException | CatalogAddException e) {
             System.out.println(e.getMessage());
@@ -44,11 +52,9 @@ public class FileSystemVideoCatalog extends UniqueVideoCassetteCatalog {
         }
     }
 
-    @Override
-    public void add(VideoCassette videoCassette) throws CatalogAddException {
-        super.add(videoCassette);
+    public void add(T obj) throws CatalogAddException {
         try (BufferedWriter bufferedWriter = Files.newBufferedWriter(file, StandardOpenOption.CREATE, StandardOpenOption.APPEND)){
-            String string = objectMapper.writeValueAsString(videoCassette);
+            String string = objectMapper.writeValueAsString(obj);
             bufferedWriter.write(string);
             bufferedWriter.newLine();
         } catch (FileNotFoundException e) {
@@ -59,12 +65,11 @@ public class FileSystemVideoCatalog extends UniqueVideoCassetteCatalog {
         }
     }
 
-    @Override
-    public void addAll(VideoCassette... videoCassette) throws CatalogAddException {
+    public void addAll(T... objs) throws CatalogAddException {
         try (BufferedWriter bufferedWriter = Files.newBufferedWriter(file, StandardOpenOption.CREATE, StandardOpenOption.APPEND)){
-            for (VideoCassette cassette : videoCassette) {
-                super.add(cassette);
-                String string = objectMapper.writeValueAsString(cassette);
+            for (T obj : objs) {
+                add(obj);
+                String string = objectMapper.writeValueAsString(obj);
                 bufferedWriter.write(string);
                 bufferedWriter.newLine();
             }
@@ -74,6 +79,10 @@ public class FileSystemVideoCatalog extends UniqueVideoCassetteCatalog {
             System.out.println(e.getMessage());
             throw new CatalogAddException(e.getMessage());
         }
+    }
+
+    public List<T> getAll() {
+        return new ArrayList<>(elements);
     }
 
     // old school ale nadal mozna spotkac i skladniowo jest poprawne

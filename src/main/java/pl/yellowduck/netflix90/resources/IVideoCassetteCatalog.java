@@ -3,9 +3,9 @@ package pl.yellowduck.netflix90.resources;
 import java.util.List;
 
 public interface IVideoCassetteCatalog {
-    void add(VideoCassette videoCassette) throws CassetteAddException;
+    void add(VideoCassette videoCassette) throws CatalogAddException;
 
-    void addAll(VideoCassette... videoCassette) throws CassetteAddException;
+    void addAll(VideoCassette... videoCassette) throws CatalogAddException;
 
-    List<VideoCassette> getVideoCassettes();
+    List<VideoCassette> getAll();
 }

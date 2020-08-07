@@ -1,13 +1,9 @@
 package pl.yellowduck.netflix90.resources;
 
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,7 +17,7 @@ public class VideoCassetteCatalogTest {
         // when
         IVideoCassetteCatalog catalog = new VideoCassetteCatalog();
         // then
-        assertThat(catalog.getVideoCassettes()).isEmpty();
+        assertThat(catalog.getAll()).isEmpty();
     }
 
     @Test // org.junit.Test
@@ -40,7 +36,7 @@ public class VideoCassetteCatalogTest {
 //        catalog.addVideoCassette(videoCassette);
 
         // then
-        assertThat(catalog.getVideoCassettes())
+        assertThat(catalog.getAll())
                 .hasSize(1);
     }
 
@@ -72,7 +68,7 @@ public class VideoCassetteCatalogTest {
 //        catalog.addVideoCassette(videoCassette1, videoCassette2);
 
         // then
-        assertThat(catalog.getVideoCassettes())
+        assertThat(catalog.getAll())
                 .hasSize(2);
     }
 }
