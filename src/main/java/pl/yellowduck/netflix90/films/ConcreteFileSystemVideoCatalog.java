@@ -1,6 +1,8 @@
-package pl.yellowduck.netflix90.resources;
+package pl.yellowduck.netflix90.films;
 
-import java.util.List;
+import pl.yellowduck.netflix90.films.IVideoCassetteCatalog;
+import pl.yellowduck.netflix90.films.VideoCassette;
+import pl.yellowduck.netflix90.resources.AbstractFileSystemCatalog;
 
 public class ConcreteFileSystemVideoCatalog extends AbstractFileSystemCatalog<VideoCassette>
         implements IVideoCassetteCatalog {
