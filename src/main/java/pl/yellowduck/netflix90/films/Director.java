@@ -1,8 +1,10 @@
-package pl.yellowduck.netflix90.resources;
+package pl.yellowduck.netflix90.films;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
+import pl.yellowduck.netflix90.common.Gender;
+import pl.yellowduck.netflix90.common.Person;
 
 @Getter
 public class Director extends Person {

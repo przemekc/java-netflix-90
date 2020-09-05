@@ -1,4 +1,4 @@
-package pl.yellowduck.netflix90.resources;
+package pl.yellowduck.netflix90.common;
 
 public enum Gender {
 

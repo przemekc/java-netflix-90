@@ -1,6 +1,7 @@
-package pl.yellowduck.netflix90.resources;
+package pl.yellowduck.netflix90.films;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import pl.yellowduck.netflix90.resources.CatalogAddException;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

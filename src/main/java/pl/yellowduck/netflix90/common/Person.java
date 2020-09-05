@@ -1,7 +1,6 @@
-package pl.yellowduck.netflix90.resources;
+package pl.yellowduck.netflix90.common;
 
 import lombok.Getter;
-import lombok.ToString;
 
 @Getter
 public abstract class Person {

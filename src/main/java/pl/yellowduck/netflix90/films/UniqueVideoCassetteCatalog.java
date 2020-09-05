@@ -1,4 +1,6 @@
-package pl.yellowduck.netflix90.resources;
+package pl.yellowduck.netflix90.films;
+
+import pl.yellowduck.netflix90.resources.CatalogAddException;
 
 import java.util.ArrayList;
 import java.util.HashSet;

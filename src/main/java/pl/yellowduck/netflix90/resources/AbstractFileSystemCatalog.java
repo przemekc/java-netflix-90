@@ -1,6 +1,7 @@
 package pl.yellowduck.netflix90.resources;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import pl.yellowduck.netflix90.films.CassettteReadException;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

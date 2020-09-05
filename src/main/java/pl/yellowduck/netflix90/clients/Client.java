@@ -1,7 +1,7 @@
 package pl.yellowduck.netflix90.clients;
 
-import pl.yellowduck.netflix90.resources.Gender;
-import pl.yellowduck.netflix90.resources.Person;
+import pl.yellowduck.netflix90.common.Gender;
+import pl.yellowduck.netflix90.common.Person;
 
 public class Client extends Person {
 

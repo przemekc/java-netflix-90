@@ -1,6 +1,6 @@
 package pl.yellowduck.netflix90;
 
-import pl.yellowduck.netflix90.resources.Category;
+import pl.yellowduck.netflix90.films.Category;
 
 public class Main3 {
 

@@ -1,13 +1,16 @@
 package pl.yellowduck.netflix90;
 
-import pl.yellowduck.netflix90.resources.*;
+import pl.yellowduck.netflix90.films.Actor;
+import pl.yellowduck.netflix90.films.Category;
+import pl.yellowduck.netflix90.films.Director;
+import pl.yellowduck.netflix90.films.VideoCassette;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
-import static pl.yellowduck.netflix90.resources.Gender.FEMALE;
-import static pl.yellowduck.netflix90.resources.Gender.MALE;
+import static pl.yellowduck.netflix90.common.Gender.FEMALE;
+import static pl.yellowduck.netflix90.common.Gender.MALE;
 
 public class Main2 {
 
