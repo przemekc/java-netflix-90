@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
 
-public class ConcreteFileSystemClientCatalog extends AbstractFileSystemCatalog<Client> {
+public class ConcreteFileSystemClientCatalog extends AbstractFileSystemCatalog<Client> implements ClientCatalog {
 
     public ConcreteFileSystemClientCatalog() {
         super("clients.txt", Client.class);
