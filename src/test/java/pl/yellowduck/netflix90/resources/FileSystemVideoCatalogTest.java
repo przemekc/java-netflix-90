@@ -1,5 +1,7 @@
 package pl.yellowduck.netflix90.resources;
 
+import pl.yellowduck.netflix90.films.FileSystemVideoCatalog;
+
 public class FileSystemVideoCatalogTest {
 
     public static void main(String[] args) {
