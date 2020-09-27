@@ -6,6 +6,9 @@ import lombok.Getter;
 import pl.yellowduck.netflix90.common.Gender;
 import pl.yellowduck.netflix90.common.Person;
 
+import javax.persistence.Entity;
+
+@Entity
 @Getter
 public class Actor extends Person {
 
