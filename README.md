@@ -41,3 +41,23 @@ Zaimplementuj rejestr wypozyczen
     - rentCost - koszt wypozyczenia (obliczany na podstawie dni i kosztu: 5 PLN za dobe. klient VIP znizka 10% na wypozyczenie jesli wypozycza a wiecej niz 3 dni)
     - returnDate - data zwrotu
  - Klasa Rent registry: rejest wypozyczen trzymajacy dane w pamieci i zapisujacy jednoczenie dane do pliku rents.txt.
+ 
+- Robimy fork repo (Lead zespolu)
+- dodajmy team members
+- member akceptuje zaproszenie na mailu
+- kazdy klonuje repo z adresu od Leada
+- Lead robi branch dev i pushuje na zdalne repo
+- kazdy member pracuje na swoim banchu feature 
+  wywiedzionym z dev (checkout -b)
+- kazdy member zglasza zmiane PR do team repo
+
+- Kodowanie:
+- klasa Category (nazwa, opis) - zapisywana do bazy
+- klasa Actor
+- klasa Director
+
+
+
+
+
+

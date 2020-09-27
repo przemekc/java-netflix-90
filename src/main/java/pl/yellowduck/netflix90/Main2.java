@@ -25,12 +25,14 @@ public class Main2 {
     actors.add(julitette);
     actors.add(greg);
 
+    Category category = new Category("DRAMA", "Dramat");
     VideoCassette theRoom = new VideoCassette(
         "VID001",
         BigDecimal.valueOf(20),
         "The Room",
         tommy,
-        Category.DRAMA,
+//        Category.DRAMA,
+            category,
         actors);
 
     theRoom.printOut();

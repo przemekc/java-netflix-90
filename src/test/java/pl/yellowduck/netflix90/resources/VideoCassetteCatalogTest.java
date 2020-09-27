@@ -23,19 +23,21 @@ public class VideoCassetteCatalogTest {
     }
 
     @Test // org.junit.Test
-    public void shouldAddVideoCassetteToCatalog() {
+    public void shouldAddVideoCassetteToCatalog() throws CatalogAddException {
         // given
         IVideoCassetteCatalog catalog = new VideoCassetteCatalog();
+        Category category = new Category("DRAMA", "Dramat");
         VideoCassette videoCassette = new VideoCassette(
                 "V001",
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+//                Category.DRAMA,
+                category,
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         // when
-//        catalog.addVideoCassette(videoCassette);
+        catalog.add(videoCassette);
 
         // then
         assertThat(catalog.getAll())
@@ -43,15 +45,17 @@ public class VideoCassetteCatalogTest {
     }
 
     @Test // org.junit.Test
-    public void shouldAddVideoCassettesToCatalog() {
+    public void shouldAddVideoCassettesToCatalog() throws CatalogAddException {
         // given
+        Category category = new Category("DRAMA", "Dramat");
         IVideoCassetteCatalog catalog = new VideoCassetteCatalog();
         VideoCassette videoCassette1 = new VideoCassette(
                 "V001",
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+//                Category.DRAMA,
+                category,
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         VideoCassette videoCassette2 = new VideoCassette(
@@ -59,7 +63,8 @@ public class VideoCassetteCatalogTest {
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+//                Category.DRAMA,
+                category,
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         // when
@@ -67,7 +72,7 @@ public class VideoCassetteCatalogTest {
 //        for (VideoCassette cassette : List.of(videoCassette1, videoCassette2)) {
 //            catalog.addVideoCassette(cassette);
 //        }
-//        catalog.addVideoCassette(videoCassette1, videoCassette2);
+        catalog.addAll(videoCassette1, videoCassette2);
 
         // then
         assertThat(catalog.getAll())
