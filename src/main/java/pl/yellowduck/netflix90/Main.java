@@ -17,7 +17,7 @@ public class Main {
     Actor greg = new Actor("Greg", "Sestero", Gender.MALE);
 
     List<Person> persons = new ArrayList<>();
-    persons.add(tommy);
+//    persons.add(tommy);
     persons.add(tommyActor);
     persons.add(julitette);
     persons.add(greg);
