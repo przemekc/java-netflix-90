@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@DiscriminatorValue("A")
+//@DiscriminatorValue("A")
 @Getter
 @Setter
 @Table (name = "actor")

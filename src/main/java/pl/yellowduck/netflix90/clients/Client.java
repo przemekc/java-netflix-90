@@ -2,17 +2,28 @@ package pl.yellowduck.netflix90.clients;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 import pl.yellowduck.netflix90.common.Gender;
 import pl.yellowduck.netflix90.common.Person;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Getter
+@Entity
 public class Client extends Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
-    @JsonCreator
-    public Client(@JsonProperty("firsrtname") String firstname,
-                  @JsonProperty("lastname") String lastname,
-                  @JsonProperty("gender") Gender gender) {
+    public Client(String firstname, String lastname, Gender gender) {
         super(firstname, lastname, gender);
+    }
+
+    public Client() {
     }
 
     @Override
@@ -25,6 +36,7 @@ public class Client extends Person {
     }
 
     public static final class ClientBuilder {
+        private Integer id;
         protected Gender gender;
         private String firstname;
         private String lastname;
