@@ -26,16 +26,16 @@ public class Main2 {
     actors.add(greg);
 
     Category category = new Category("DRAMA", "Dramat");
-    VideoCassette theRoom = new VideoCassette(
-        "VID001",
-        BigDecimal.valueOf(20),
-        "The Room",
-        tommy,
-//        Category.DRAMA,
-            category,
-        actors);
+//    VideoCassette theRoom = new VideoCassette(
+//        "VID001",
+//        BigDecimal.valueOf(20),
+//        "The Room",
+//        tommy,
+////        Category.DRAMA,
+//            category,
+//        actors);
 
-    theRoom.printOut();
+//    theRoom.printOut();
   }
 }
 

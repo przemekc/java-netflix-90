@@ -27,17 +27,17 @@ public class VideoCassetteCatalogTest {
         // given
         IVideoCassetteCatalog catalog = new VideoCassetteCatalog();
         Category category = new Category("DRAMA", "Dramat");
-        VideoCassette videoCassette = new VideoCassette(
-                "V001",
-                BigDecimal.valueOf(20),
-                "The room",
-                new Director("Tommy", "Wiseau", Gender.MALE),
-//                Category.DRAMA,
-                category,
-                Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
+//        VideoCassette videoCassette = new VideoCassette(
+//                "V001",
+//                BigDecimal.valueOf(20),
+//                "The room",
+//                new Director("Tommy", "Wiseau", Gender.MALE),
+////                Category.DRAMA,
+//                category,
+//                Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         // when
-        catalog.add(videoCassette);
+//        catalog.add(videoCassette);
 
         // then
         assertThat(catalog.getAll())
@@ -49,30 +49,30 @@ public class VideoCassetteCatalogTest {
         // given
         Category category = new Category("DRAMA", "Dramat");
         IVideoCassetteCatalog catalog = new VideoCassetteCatalog();
-        VideoCassette videoCassette1 = new VideoCassette(
-                "V001",
-                BigDecimal.valueOf(20),
-                "The room",
-                new Director("Tommy", "Wiseau", Gender.MALE),
-//                Category.DRAMA,
-                category,
-                Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
-
-        VideoCassette videoCassette2 = new VideoCassette(
-                "V002",
-                BigDecimal.valueOf(20),
-                "The room",
-                new Director("Tommy", "Wiseau", Gender.MALE),
-//                Category.DRAMA,
-                category,
-                Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
+//        VideoCassette videoCassette1 = new VideoCassette(
+//                "V001",
+//                BigDecimal.valueOf(20),
+//                "The room",
+//                new Director("Tommy", "Wiseau", Gender.MALE),
+////                Category.DRAMA,
+//                category,
+//                Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
+//
+//        VideoCassette videoCassette2 = new VideoCassette(
+//                "V002",
+//                BigDecimal.valueOf(20),
+//                "The room",
+//                new Director("Tommy", "Wiseau", Gender.MALE),
+////                Category.DRAMA,
+//                category,
+//                Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         // when
         // mozna tak ale lepiej udostepnic metode do zlozonej operacji
 //        for (VideoCassette cassette : List.of(videoCassette1, videoCassette2)) {
 //            catalog.addVideoCassette(cassette);
 //        }
-        catalog.addAll(videoCassette1, videoCassette2);
+//        catalog.addAll(videoCassette1, videoCassette2);
 
         // then
         assertThat(catalog.getAll())
