@@ -1,5 +1,4 @@
 package pl.yellowduck.netflix90.resources;
-
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import pl.yellowduck.netflix90.common.Gender;
