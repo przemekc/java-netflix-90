@@ -26,7 +26,6 @@ Category category  = new Category("Horror", "Scary movie");
     actors.add(greg);
 
     VideoCassette theRoom = new VideoCassette(
-        "VID001",
         BigDecimal.valueOf(20),
         "The Room",
         tommy,
