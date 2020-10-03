@@ -1,25 +1,32 @@
 package pl.yellowduck.netflix90.films;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
+import lombok.Setter;
 import pl.yellowduck.netflix90.common.Gender;
-import pl.yellowduck.netflix90.common.Person;
 
+import javax.persistence.*;
+
+@Entity
 @Getter
-public class Director extends Person {
+@Setter
+@Table(name = "director")
+public class Director {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Integer id;
+    @Column
+    protected String lastname;
+    @Column
+    protected String firstname;
+    @Column
+    protected Gender gender;
 
-  @JsonCreator
-  public Director(@JsonProperty("firstname") String firstname,
-                  @JsonProperty("lastname") String lastname,
-                  @JsonProperty("gender") Gender gender) {
-    super(firstname, lastname, gender);
-  }
+    public Director() {
+    }
 
-  @Override
-  public void introduce() {
-    System.out.println("My name is " + getFirstname() + " " + getLastname() + ". I am director.");
-  }
-
-
+    public Director(String firstname, String lastname, Gender gender) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.gender = gender;
+    }
 }
