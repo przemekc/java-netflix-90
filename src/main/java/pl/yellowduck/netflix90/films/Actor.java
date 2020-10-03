@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+//@DiscriminatorValue("A")
 @Getter
 @Setter
 @Table (name = "actor")
@@ -31,6 +32,7 @@ public class Actor extends Person{
 // List<VideoCassette> videoCassettes = new ArrayList<>();
 
   private Actor() {
+    super();
   }
 
   public Actor(String firstname, String lastname, Gender gender) {

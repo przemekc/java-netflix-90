@@ -1,26 +1,33 @@
 package pl.yellowduck.netflix90.rentals;
 
 import lombok.Getter;
+import lombok.Setter;
+import pl.yellowduck.netflix90.clients.Client;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Getter
+@Setter
+@Entity
 //@RequiredArgsConstructor
 public class Rental {
 
-    private final int identity;
-    private final String clientId;
-    private final String casseteId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer identity;
+    @ManyToOne
+    private Client clientId;
+    private final String cassetteId;
     private final LocalDate rentDate;
     private final int rentDays;
     private final BigDecimal rentCost;
     private LocalDate returnDate;
 
     private Rental(RentalBuilder builder) {
-        this.identity = builder.identity;
         this.clientId = builder.clientId;
-        this.casseteId = builder.casseteId;
+        this.cassetteId = builder.casseteId;
         this.rentDate = builder.rentDate;
         this.rentDays = builder.rentDays;
         this.rentCost = builder.rentCost;
@@ -31,23 +38,22 @@ public class Rental {
     }
 
     public static final class RentalBuilder {
-        private int identity;
-        private String clientId;
+        private Client clientId;
         private String casseteId;
         private LocalDate rentDate;
         private int rentDays;
         private BigDecimal rentCost;
         private LocalDate returnDate;
 
-        private RentalBuilder() {
+        RentalBuilder() {
         }
 
-        public RentalBuilder withIdentity(int identity) {
-            this.identity = identity;
-            return this;
-        }
+//        public RentalBuilder withIdentity(int identity) {
+//            this.identity = identity;
+//            return this;
+//        }
 
-        public RentalBuilder withClientId(String clientId) {
+        public RentalBuilder withClientId(Client clientId) {
             this.clientId = clientId;
             return this;
         }
