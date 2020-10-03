@@ -10,8 +10,10 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.junit.Test;
 import pl.yellowduck.netflix90.common.Gender;
 
+import static org.junit.Assert.fail;
 
-public class ActorTest extends TestCase {
+
+public class ActorTest {
 
     @Test
     public void shouldAddNewActorToTheDB(){
@@ -31,6 +33,9 @@ public class ActorTest extends TestCase {
             session.persist(actor);
 
             actor = new Actor("Sandra","Bullock", Gender.FEMALE);
+            session.persist(actor);
+
+            actor = new Actor("Juliette","Binoche", Gender.FEMALE);
             session.persist(actor);
 
 
