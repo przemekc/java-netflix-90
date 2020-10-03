@@ -34,13 +34,11 @@ public class VideoCassetteTest {
         Category category  = new Category("Horror", "Scary movie");
         Set<Actor> actors = new HashSet<>();
 
-
-
-
         Transaction tx = null;
         try (Session session = sessionFactory.openSession()) {
             tx = session.beginTransaction();
             session.persist(category);
+            session.persist(tommy);
             session.persist(tommyActor);
             actors.add(tommyActor);
             session.persist(julitette);
@@ -48,16 +46,15 @@ public class VideoCassetteTest {
             session.persist(greg);
             actors.add(greg);
             VideoCassette theRoom = new VideoCassette(
-                    1,
                     BigDecimal.valueOf(20),
                     "The Room",
                     tommy,
                     category,
-                    actors);
+                    Set.of(tommyActor, julitette, greg));
             session.persist(theRoom);
             tx.commit();
 
-        } catch (Exception ex) {
+        } catch (Exception ex) { ex.printStackTrace();
             if (tx != null) {
                 tx.rollback();
             }

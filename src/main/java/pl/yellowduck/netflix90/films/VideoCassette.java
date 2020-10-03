@@ -30,8 +30,7 @@ public class VideoCassette {
   }
 
 
-  public VideoCassette(Integer id, BigDecimal price, String title, Director director, Category category, Set<Actor> actors) {
-    this.id = id;
+  public VideoCassette( BigDecimal price, String title, Director director, Category category, Set<Actor> actors) {
     this.price = price;
     this.title = title;
     this.director = director;
