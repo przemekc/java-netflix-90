@@ -1,13 +1,27 @@
 package pl.yellowduck.netflix90.common;
 
+import lombok.Generated;
 import lombok.Getter;
+import lombok.Setter;
 
-@Getter
+import javax.persistence.*;
+
+@Getter @Setter
+//@Entity
+//@Table(name="persons")
+//@Inheritance (strategy = InheritanceType.SINGLE_TABLE)
+//@DiscriminatorColumn (name = "type", discriminatorType = DiscriminatorType.CHAR)
+//@Generated
+@MappedSuperclass
 public abstract class Person {
+
 
   private String firstname;
   private String lastname;
-  protected final Gender gender;
+  protected Gender gender;
+
+  public Person() {
+  }
 
   public Person(String firstname, String lastname, Gender gender) {
     this.firstname = firstname;

@@ -17,7 +17,7 @@ public class Main {
     Actor greg = new Actor("Greg", "Sestero", Gender.MALE);
 
     List<Person> persons = new ArrayList<>();
-//    persons.add(tommy);
+    //persons.add(tommy);
     persons.add(tommyActor);
     persons.add(julitette);
     persons.add(greg);
@@ -27,10 +27,9 @@ public class Main {
       System.out.println(person.toString());
     }
 
-    // or
-//    for (Person person : persons) {
-//      person.introduce();
-//    }
+    for (Person person : persons) {
+      person.introduce();
+    }
   }
 }
 
