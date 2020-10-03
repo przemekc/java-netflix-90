@@ -16,11 +16,12 @@ public class Main {
     Actor julitette = new Actor("Juliette", "Danielle", Gender.FEMALE);
     Actor greg = new Actor("Greg", "Sestero", Gender.MALE);
 
-    List<Person> persons = new ArrayList<>();
+ List<? extends Person> persons = new ArrayList<>();
+ //TODO
 //    persons.add(tommy);
-    persons.add(tommyActor);
-    persons.add(julitette);
-    persons.add(greg);
+//    persons.add(tommyActor);
+//    persons.add(julitette);
+//    persons.add(greg);
 
     for (int i = 0; i < persons.size() - 1; i++) {
       Person person = persons.get(i);
