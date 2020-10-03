@@ -10,6 +10,7 @@ import java.util.Set;
 
 public class UniqueVideoCassetteCatalogTest {
 
+    Category category = new Category("Comedy", "Happy movie");
     @Test
     public void shouldNotAddSameIdVideCassette() {
         // given
@@ -18,7 +19,7 @@ public class UniqueVideoCassetteCatalogTest {
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+                category,
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         VideoCassette videoCassette2 = new VideoCassette(
@@ -26,7 +27,7 @@ public class UniqueVideoCassetteCatalogTest {
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+                category,
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         IVideoCassetteCatalog catalog = new UniqueVideoCassetteCatalog();

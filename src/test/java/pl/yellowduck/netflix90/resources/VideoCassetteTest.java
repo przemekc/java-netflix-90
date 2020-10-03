@@ -14,6 +14,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class VideoCassetteTest {
 
+    Category category = new Category("Drama", "Sad movie");
+
     @Test
     public void shouldVideoCassetteIsEqual() {
         // given
@@ -22,7 +24,7 @@ public class VideoCassetteTest {
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+                category,
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         VideoCassette videoCassette2 = new VideoCassette(
@@ -30,7 +32,7 @@ public class VideoCassetteTest {
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+                category,
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
         // when
         boolean result = videoCassette1.equals(videoCassette2);

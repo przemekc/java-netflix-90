@@ -12,6 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class VideoCassetteCatalogTest {
 
+    Category category = new Category("Drama", "Sad movie");
 
     // test sprawdza czy utworzony katalog jest wyjsciowo pusty
     @Test
@@ -31,7 +32,7 @@ public class VideoCassetteCatalogTest {
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+                category,
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         // when
@@ -51,7 +52,7 @@ public class VideoCassetteCatalogTest {
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+                category,
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         VideoCassette videoCassette2 = new VideoCassette(
@@ -59,7 +60,7 @@ public class VideoCassetteCatalogTest {
                 BigDecimal.valueOf(20),
                 "The room",
                 new Director("Tommy", "Wiseau", Gender.MALE),
-                Category.DRAMA,
+                category,
                 Set.of(new Actor("Tommy", "Wiseau", Gender.MALE)));
 
         // when

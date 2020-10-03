@@ -19,7 +19,7 @@ public class Main2 {
     Actor tommyActor = new Actor("Tommy", "Wiseau", MALE);
     Actor julitette = new Actor("Juliette", "Danielle", FEMALE);
     Actor greg = new Actor("Greg", "Sestero", MALE);
-
+Category category  = new Category("Horror", "Scary movie");
     Set<Actor> actors = new HashSet<>();
     actors.add(tommyActor);
     actors.add(julitette);
@@ -30,7 +30,7 @@ public class Main2 {
         BigDecimal.valueOf(20),
         "The Room",
         tommy,
-        Category.DRAMA,
+        category,
         actors);
 
     theRoom.printOut();
