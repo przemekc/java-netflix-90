@@ -17,26 +17,24 @@ import java.util.Set;
 @Getter
 @Setter
 @Table (name = "actor")
-public class Actor  {
+public class Actor extends Person{
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
-  @Column (name = "last_name")
-  private String lastname;
-  @Column (name = "first_name")
-  private String firstname;
-  @Column (name = "gender")
-  private Gender gender;
-  //List<VideoCassette> videoCassettes = new ArrayList<>();
+//  @Column (name = "last_name")
+//  private String lastname;
+//  @Column (name = "first_name")
+//  private String firstname;
+//  @Column (name = "gender")
+//  private Gender gender;
+// List<VideoCassette> videoCassettes = new ArrayList<>();
 
   private Actor() {
   }
 
   public Actor(String firstname, String lastname, Gender gender) {
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.gender = gender;
+    super(firstname, lastname, gender);
   }
 
 //  @Override

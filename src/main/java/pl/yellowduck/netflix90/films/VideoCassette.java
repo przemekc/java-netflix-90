@@ -2,20 +2,27 @@ package pl.yellowduck.netflix90.films;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.Set;
 
 @Getter
+@EqualsAndHashCode(exclude = {"actors", "category", "director"})
 public class VideoCassette {
 
   private String id;
   private BigDecimal price;
   private String title;
+  @ManyToMany (fetch = FetchType.LAZY)
   private Director director;
+  @ManyToMany (fetch = FetchType.LAZY)
   private Category category;
+  @ManyToMany (fetch = FetchType.LAZY)
   private Set<Actor> actors;
 
   @JsonCreator
