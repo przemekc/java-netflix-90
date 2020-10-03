@@ -7,7 +7,6 @@ import pl.yellowduck.netflix90.common.Person;
 
 public class Client extends Person {
 
-
     @JsonCreator
     public Client(@JsonProperty("firsrtname") String firstname,
                   @JsonProperty("lastname") String lastname,

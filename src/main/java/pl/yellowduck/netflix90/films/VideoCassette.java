@@ -3,9 +3,12 @@ package pl.yellowduck.netflix90.films;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
+import pl.yellowduck.netflix90.common.Person;
 
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
-import java.util.Objects;
 import java.util.Set;
 
 @Getter
@@ -14,8 +17,14 @@ public class VideoCassette {
   private String id;
   private BigDecimal price;
   private String title;
-  private Director director;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  private Person director;
+
+  @ManyToOne(fetch = FetchType.LAZY)
   private Category category;
+
+  @ManyToMany(fetch = FetchType.LAZY)
   private Set<Actor> actors;
 
   @JsonCreator
@@ -53,16 +62,4 @@ public class VideoCassette {
     System.out.println(builder.toString());
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    VideoCassette that = (VideoCassette) o;
-    return Objects.equals(id, that.id);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id);
-  }
 }

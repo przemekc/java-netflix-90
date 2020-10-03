@@ -1,9 +1,12 @@
 package pl.yellowduck.netflix90.films;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "category")
+@Getter
 public class Category {
 
   @Id

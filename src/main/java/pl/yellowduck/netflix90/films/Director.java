@@ -6,13 +6,21 @@ import lombok.Getter;
 import pl.yellowduck.netflix90.common.Gender;
 import pl.yellowduck.netflix90.common.Person;
 
-@Getter
+import javax.persistence.*;
+
+@Entity
+//@DiscriminatorValue("D")
+@Table(name = "directors")
 public class Director extends Person {
 
-  @JsonCreator
-  public Director(@JsonProperty("firstname") String firstname,
-                  @JsonProperty("lastname") String lastname,
-                  @JsonProperty("gender") Gender gender) {
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Integer id;
+
+  public Director() {
+  }
+
+  public Director(String firstname, String lastname, Gender gender) {
     super(firstname, lastname, gender);
   }
 
