@@ -26,11 +26,18 @@ public class MainController {
 
   public void categories(ActionEvent actionEvent) throws IOException {
     Parent categories = FXMLLoader.load(getClass().getClassLoader().getResource("views/categories.fxml"));
-    mainPanel.getChildren().clear();
-    mainPanel.getChildren().add(categories);
 
     Stage stage = new Stage();
-    Scene scene = new Scene(categories, 1200, 800);
+    Scene scene = new Scene(categories, 800, 600);
+    stage.setScene(scene);
+    stage.show();
+  }
+
+  public void newCategory(ActionEvent event) throws IOException {
+    Parent category = FXMLLoader.load(getClass().getClassLoader().getResource("views/category.fxml"));
+
+    Stage stage = new Stage();
+    Scene scene = new Scene(category, 400, 300);
     stage.setScene(scene);
     stage.show();
   }
