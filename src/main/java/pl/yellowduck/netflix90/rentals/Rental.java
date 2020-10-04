@@ -14,6 +14,8 @@ import java.time.LocalDate;
 //@RequiredArgsConstructor
 public class Rental {
 
+
+    private final String casseteId;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer identity;
@@ -26,6 +28,9 @@ public class Rental {
     private LocalDate returnDate;
 
     private Rental(RentalBuilder builder) {
+
+        this.clientId = builder.clientId;
+        this.casseteId = builder.casseteId;
         this.clientId = builder.clientId;
         this.cassetteId = builder.casseteId;
         this.rentDate = builder.rentDate;

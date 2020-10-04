@@ -34,43 +34,43 @@ public class ClientsCommnad implements Command {
 
         readOption = scanner.nextLine();
 
-        inner:
-        while (true) {
-            switch (readOption) {
-                case "s":
-                    System.out.println("search");
-
-                    String keyword = scanner.nextLine();
-
-                    System.out.println("search by " + keyword);
-                    System.out.println("found " + 5);
-
-                    break;
-                case "p":
-                    catalog.getAll().stream()
-                            .forEach(System.out::println);
-                    break inner;
-                case "a":
-                    Client.ClientBuilder builder = Client.builder();
-
-                    System.out.print("Fist name: ");
-                    builder.withFirstname(scanner.nextLine());
-
-                    System.out.print("Last name: ");
-                    builder.withLastname(scanner.nextLine());
-
-                    System.out.print("Gender : (" + Gender.MALE + " " + Gender.FEMALE +")");
-                    builder.withGender(Gender.valueOf(scanner.nextLine()));
-
-                    try {
-                        catalog.add(builder.build());
-                    } catch (CatalogAddException e) {
-                        e.printStackTrace();
-                    }
-                    break inner;
-                case "b":
-                    break inner;
-            }
-        }
+//        inner:
+//        while (true) {
+//            switch (readOption) {
+//                case "s":
+//                    System.out.println("search");
+//
+//                    String keyword = scanner.nextLine();
+//
+//                    System.out.println("search by " + keyword);
+//                    System.out.println("found " + 5);
+//
+//                    break;
+//                case "p":
+//                    catalog.getAll().stream()
+//                            .forEach(System.out::println);
+//                    break inner;
+//                case "a":
+//                    Client.ClientBuilder builder = Client.builder();
+//
+//                    System.out.print("Fist name: ");
+//                    builder.withFirstname(scanner.nextLine());
+//
+//                    System.out.print("Last name: ");
+//                    builder.withLastname(scanner.nextLine());
+//
+//                    System.out.print("Gender : (" + Gender.MALE + " " + Gender.FEMALE +")");
+//                    builder.withGender(Gender.valueOf(scanner.nextLine()));
+//
+//                    try {
+//                        catalog.add(builder.build());
+//                    } catch (CatalogAddException e) {
+//                        e.printStackTrace();
+//                    }
+//                    break inner;
+//                case "b":
+//                    break inner;
+//            }
     }
 }
+

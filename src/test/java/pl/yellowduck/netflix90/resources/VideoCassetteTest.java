@@ -1,5 +1,4 @@
 package pl.yellowduck.netflix90.resources;
-
 import org.junit.Test;
 import pl.yellowduck.netflix90.common.Gender;
 import pl.yellowduck.netflix90.films.Actor;
