@@ -5,7 +5,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import pl.yellowduck.netflix90.common.Gender;
 import pl.yellowduck.netflix90.common.Person;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "clients")
 public class Client extends Person {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    public Client() {
+    }
 
     @JsonCreator
     public Client(@JsonProperty("firsrtname") String firstname,
@@ -49,5 +60,9 @@ public class Client extends Person {
         public Client build() {
             return new Client(firstname, lastname, gender);
         }
+    }
+
+    public Integer getId() {
+        return id;
     }
 }
