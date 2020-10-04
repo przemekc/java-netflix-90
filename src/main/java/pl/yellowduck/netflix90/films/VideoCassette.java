@@ -21,12 +21,13 @@ public class VideoCassette {
   private Category category;
   @OneToMany(fetch = FetchType.LAZY)
   private Set<Actor> actors;
+
   public VideoCassette() {
   }
 
 
 
-  public VideoCassette(BigDecimal price, String title, Director director, Category category) {
+  public VideoCassette(BigDecimal price, String title, Director director, Category category, Set<Actor> actors) {
       this.price = price;
       this.title = title;
       this.director = director;
@@ -34,8 +35,6 @@ public class VideoCassette {
       this.actors = actors;
     }
 
-  public <E> VideoCassette(BigDecimal valueOf, String the_room, Director director, Category category, Set<E> es) {
-  }
 
   public void printOut() {
       // print casette data with below pattern

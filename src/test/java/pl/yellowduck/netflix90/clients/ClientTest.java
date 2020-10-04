@@ -41,6 +41,7 @@ public class ClientTest {
 
 
         } catch (Exception e) {
+            e.printStackTrace();
             fail("Error");
             e.printStackTrace();
             StandardServiceRegistryBuilder.destroy(registry);

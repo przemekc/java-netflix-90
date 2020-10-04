@@ -2,6 +2,7 @@ package pl.yellowduck.netflix90.rentals;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
+import pl.yellowduck.netflix90.clients.Client;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -15,8 +16,8 @@ public class RentalRegistryTest {
     public void shouldRegisterRental() {
         // given
         Rental rental = Rental.builder()
-                .withIdentity(1)
-                .withClientId("C001")
+               // .withIdentity(1)
+               // .withClient(new Client client)
                 .withCasseteId("001")
                 .withRentDate(LocalDate.now())
                 .withRentDays(5)

@@ -1,5 +1,6 @@
 package pl.yellowduck.netflix90.rentals;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -11,6 +12,8 @@ import pl.yellowduck.netflix90.clients.Client;
 import pl.yellowduck.netflix90.common.Gender;
 import pl.yellowduck.netflix90.films.Actor;
 
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -36,6 +39,8 @@ public class RentalTest1 {
             Client client = new Client("Helena","Styszyńska",Gender.FEMALE);
             session.persist(client);
 
+            Client client1 = session.load(Client.class, 2);
+
 
 
             Rental rental = new Rental.RentalBuilder()
@@ -47,11 +52,15 @@ public class RentalTest1 {
                     .build();
             session.persist(rental);
 
-//            actor = new Actor("Sandra","Bullock", Gender.FEMALE);
-//            session.persist(actor);
-//
-//            actor = new Actor("Juliette","Binoche", Gender.FEMALE);
-//            session.persist(actor);
+            Rental rental1 = new Rental.RentalBuilder()
+                    .withCasseteId("005")
+                    .withRentDate(LocalDate.of(2020,05,16))
+                    .withRentDays(5)
+                    .withClientId(client1)
+                    .withRentCost(BigDecimal.valueOf(25.89))
+                    .build();
+            session.persist(rental1);
+
 
 
             transaction.commit();

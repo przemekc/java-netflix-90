@@ -20,18 +20,18 @@ public class Rental {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer identity;
     @ManyToOne
-    private Client clientId;
+    private Client client;
     private final String cassetteId;
     private final LocalDate rentDate;
     private final int rentDays;
     private final BigDecimal rentCost;
+    @Setter
     private LocalDate returnDate;
 
     private Rental(RentalBuilder builder) {
 
-        this.clientId = builder.clientId;
+        this.client = builder.client;
         this.casseteId = builder.casseteId;
-        this.clientId = builder.clientId;
         this.cassetteId = builder.casseteId;
         this.rentDate = builder.rentDate;
         this.rentDays = builder.rentDays;
@@ -43,7 +43,7 @@ public class Rental {
     }
 
     public static final class RentalBuilder {
-        private Client clientId;
+        private Client client;
         private String casseteId;
         private LocalDate rentDate;
         private int rentDays;
@@ -58,8 +58,8 @@ public class Rental {
 //            return this;
 //        }
 
-        public RentalBuilder withClientId(Client clientId) {
-            this.clientId = clientId;
+        public RentalBuilder withClientId(Client client) {
+            this.client = client;
             return this;
         }
 
