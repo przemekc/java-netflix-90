@@ -8,9 +8,10 @@
 
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.control.Button?>
-<FlowPane fx:controller="pl.yellowduck.netflix90.gui.CategoriesController"
-        maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-          prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.layout.VBox?>
+<VBox fx:controller="pl.yellowduck.netflix90.gui.CategoriesController"
+      maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Button fx:id="loadButton" onAction="#loadData" text="Załaduj"/>
         <TableView fx:id="categoriesTable">
@@ -31,4 +32,4 @@
             </cursor>
         </TableView>
     </children>
-</FlowPane>
+</VBox>
