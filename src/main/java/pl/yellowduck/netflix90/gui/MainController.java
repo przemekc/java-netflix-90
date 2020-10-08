@@ -42,4 +42,14 @@ public class MainController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void newClient(ActionEvent actionEvent) throws IOException {
+
+        Parent category = FXMLLoader.load(getClass().getClassLoader().getResource("views/clients.fxml"));
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(category, 400, 300);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

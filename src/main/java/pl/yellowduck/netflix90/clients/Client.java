@@ -1,5 +1,6 @@
 package pl.yellowduck.netflix90.clients;
 
+import javafx.scene.control.ChoiceBox;
 import lombok.Getter;
 import lombok.Setter;
 import pl.yellowduck.netflix90.common.Gender;
@@ -23,6 +24,9 @@ public class Client extends Person {
     public Client(String firstname, String lastname, Gender gender) {
         super(firstname, lastname, gender);
     }
+
+    //public Client(String firstName, String lastName, ChoiceBox genderInput) {
+    //}
 
     @Override
     public void introduce() {

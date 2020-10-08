@@ -21,6 +21,7 @@
             <menus>
                 <Menu mnemonicParsing="false" text="Application">
                     <items>
+                        <MenuItem mnemonicParsing="false" text="Clients" onAction="#newClient"/>
                         <MenuItem mnemonicParsing="false" text="Quit" onAction="#quit"/>
                     </items>
                 </Menu>
