@@ -40,12 +40,6 @@
          </VBox.margin>
       </Label>
       <ChoiceBox fx:id="genderInput" accessibleRole="CHECK_BOX" prefWidth="150.0">
-      <items>
-         <FXCollections fx:factory="observableArrayList">
-            <Gender fx:constant="FEMALE"/>
-            <Gender fx:constant="MALE"/>
-         </FXCollections>
-      </items>
       </ChoiceBox>
       <Button mnemonicParsing="false" onAction="#saveClient" text="Save">
          <font>

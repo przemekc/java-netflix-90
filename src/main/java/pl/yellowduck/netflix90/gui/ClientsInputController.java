@@ -1,8 +1,7 @@
 package pl.yellowduck.netflix90.gui;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -13,38 +12,36 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import pl.yellowduck.netflix90.clients.Client;
 import pl.yellowduck.netflix90.common.Gender;
-import pl.yellowduck.netflix90.films.Category;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class ClientsInputController {
-    private Object ObservableList;
-    //private Object Gender;
+public class ClientsInputController implements Initializable {
+
     @FXML
-    ChoiceBox genderInput = new ChoiceBox();
+    ChoiceBox<Gender> genderInput = new ChoiceBox();
+
     @FXML
     TextField firstNameInput;
+
     @FXML
     TextField lastNameInput;
-    Gender gender;
-    List<Gender> genders = new ArrayList<Gender>();
 
 
-//    public ChoiceBox getGenderInput() {
-//        genderInput.getItems().setAll(Gender.values());
-//        //gender.add(Gender.FEMALE);
-//        //gender.add(Gender.MALE);
-//        //genderInput.setItems(FXCollections.observableList(Gender.values()));
-//        return genderInput;
-//    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.genderInput.getItems().setAll(Gender.values());
+    }
 
     public void saveClient() {
         String firstName = firstNameInput.getText();
         String lastName = lastNameInput.getText();
-       // gender = genderInput.getValue();
+       Gender gender = this.genderInput.getValue();
 
-        if (StringUtils.isNoneBlank(firstName) && StringUtils.isNoneBlank(lastName)) {
+        if (StringUtils.isNoneBlank(firstName) &&
+            StringUtils.isNoneBlank(lastName) &&
+            !Objects.isNull(gender)) {
 
             Client client = new Client(firstName, lastName, gender);
             SessionFactory sessionFactory = new Configuration()
@@ -67,8 +64,6 @@ public class ClientsInputController {
         }
 
     }
-
-
 }
 
 
